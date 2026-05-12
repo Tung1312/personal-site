@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, CircleDot, MapPin } from "lucide-react";
-import Link from "next/link";
+import { CircleDot, MapPin } from "lucide-react";
 import { GitHubStats } from "@/components/portfolio/github-stats";
 import { MotionCard, containerVariants } from "@/components/portfolio/motion";
 import { TechStackMarquee } from "@/components/portfolio/tech-stack-marquee";
@@ -10,8 +9,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { siteData } from "@/lib/site-data";
 
 export default function Home() {
-  const featuredProjects = siteData.projects.slice(0, 3);
-
   return (
     <section className="space-y-5 pb-4">
       <motion.div
@@ -68,36 +65,6 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <GitHubStats />
-            </CardContent>
-          </Card>
-        </MotionCard>
-
-        <MotionCard className="md:col-span-2">
-          <Card className="glass-card h-full">
-            <CardHeader>
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-                Featured Projects
-              </p>
-              <CardTitle>Selected software and game builds</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {featuredProjects.map((project) => (
-                <Link
-                  key={project.title}
-                  href={project.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group block rounded-xl border border-zinc-200/70 bg-white/50 p-4 transition-colors hover:border-zinc-300 dark:border-zinc-700/80 dark:bg-zinc-950/20 dark:hover:border-zinc-500"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <p className="font-medium text-zinc-900 dark:text-zinc-100">{project.title}</p>
-                      <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">{project.summary}</p>
-                    </div>
-                    <ArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-zinc-500 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 dark:text-zinc-300" />
-                  </div>
-                </Link>
-              ))}
             </CardContent>
           </Card>
         </MotionCard>

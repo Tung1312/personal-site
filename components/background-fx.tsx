@@ -61,7 +61,7 @@ export function BackgroundFx() {
           isDark ? "opacity-100" : "opacity-0",
         )}
         style={{
-          background: `radial-gradient(420px circle at ${cursor.x}px ${cursor.y}px, rgba(56, 189, 248, 0.14), transparent 62%)`,
+          background: `radial-gradient(240px circle at ${cursor.x}px ${cursor.y}px, rgba(56, 189, 248, 0.11), transparent 60%)`,
         }}
       />
     </div>

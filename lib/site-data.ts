@@ -9,22 +9,6 @@ export type SocialLink = {
   href: string;
 };
 
-export type Project = {
-  title: string;
-  summary: string;
-  href: string;
-  category: "Software" | "Game" | "Infra";
-  tags: string[];
-};
-
-export type BlogEntry = {
-  title: string;
-  excerpt: string;
-  href: string;
-  publishedAt: string;
-  readTime: string;
-};
-
 export type WorkEntry = {
   company: string;
   role: string;
@@ -46,41 +30,37 @@ const activityHeatmap = Array.from({ length: 98 }, (_, index) => {
 
 export const siteData = {
   person: {
-    name: "Tung Nguyen",
-    pronouns: "He/Him",
+    name: "Tran Tung",
+    pronouns: "he/him",
     role: "Senior Frontend Developer · Creative Technologist",
-    bio: "I design and ship premium web experiences with React, Next.js, and modern interaction design.",
-    location: "Ho Chi Minh City, Vietnam",
+    bio: "junior sysadmin · homelab hobbyist",
+    location: "Ha Noi, Vietnam",
     availability: "Open to consulting and product collaborations",
-    footerStatus: "Building in public",
+    footerStatus: "nerd",
     email: "hello@tung.dev",
   },
   nav: {
     primary: [
-      { title: "Home", href: "/" },
-      { title: "Projects", href: "/projects" },
-      { title: "Blogs", href: "/blogs" },
-    ] satisfies NavLink[],
-    secondary: [
-      { title: "Work", href: "/work" },
-      { title: "Uses", href: "/uses" },
-      { title: "Homelab", href: "/homelab" },
+      { title: "~", href: "/" },
+      { title: "homelab", href: "/homelab" },
+      { title: "uses", href: "/uses" },
+      { title: "work", href: "/work" },
     ] satisfies NavLink[],
   },
   socials: [
     {
-      label: "GitHub",
-      handle: "@tung1312",
-      href: "https://github.com/tung1312",
+      label: "github",
+      handle: "@github",
+      href: "https://github.com/Tung1312",
     },
     {
-      label: "LinkedIn",
-      handle: "@tung-nguyen",
-      href: "https://www.linkedin.com/in/tung-nguyen",
+      label: "youtube",
+      handle: "@youtube",
+      href: "https://www.youtube.com/@trantung1312",
     },
     {
       label: "Contact",
-      handle: "hello@tung.dev",
+      handle: "@mail",
       href: "mailto:hello@tung.dev",
     },
   ] satisfies SocialLink[],
@@ -102,66 +82,6 @@ export const siteData = {
     mergedPrs: 91,
     heatmap: activityHeatmap,
   },
-  projects: [
-    {
-      title: "Astra Control Plane",
-      summary:
-        "A multi-tenant dashboard for edge services with realtime observability and deployment orchestration.",
-      href: "https://github.com/tung1312",
-      category: "Software",
-      tags: ["Next.js", "tRPC", "WebSockets"],
-    },
-    {
-      title: "Signalforge",
-      summary:
-        "A narrative puzzle game prototype blending shader-driven visuals with browser-native game loops.",
-      href: "https://github.com/tung1312",
-      category: "Game",
-      tags: ["React", "Three.js", "GSAP"],
-    },
-    {
-      title: "Homelab Pulse",
-      summary:
-        "Status and telemetry layer for my homelab, with service health, latency snapshots, and alert routing.",
-      href: "https://github.com/tung1312",
-      category: "Infra",
-      tags: ["Grafana", "Prometheus", "Docker"],
-    },
-    {
-      title: "Neon Docs",
-      summary:
-        "A documentation platform with AI-assisted search and MDX authoring for engineering teams.",
-      href: "https://github.com/tung1312",
-      category: "Software",
-      tags: ["MDX", "OpenAI", "Next.js"],
-    },
-  ] satisfies Project[],
-  blogs: [
-    {
-      title: "Designing Motion Systems for Bento Interfaces",
-      excerpt:
-        "How I build nuanced card animations that stay elegant under real production constraints.",
-      href: "#",
-      publishedAt: "2026-03-04",
-      readTime: "7 min read",
-    },
-    {
-      title: "Theme Architecture in Next.js App Router",
-      excerpt:
-        "A practical deep dive into robust dark/light mode setup with visual continuity and no flashes.",
-      href: "#",
-      publishedAt: "2026-02-12",
-      readTime: "9 min read",
-    },
-    {
-      title: "From Glassmorphism to Clarity",
-      excerpt:
-        "Using translucency intentionally without sacrificing readability, contrast, or accessibility.",
-      href: "#",
-      publishedAt: "2025-12-22",
-      readTime: "5 min read",
-    },
-  ] satisfies BlogEntry[],
   work: [
     {
       company: "Hyperlane Studio",
