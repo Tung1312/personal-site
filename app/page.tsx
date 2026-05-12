@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 
 const aliases = ["Trần Quang Tùng", "Tùng Trần", "Tung1312"] as const;
@@ -20,14 +21,38 @@ export default function Home() {
             href="https://uet.vnu.edu.vn/"
             target="_blank"
             rel="noreferrer"
-            className="glass-pill pill-hover-glow inline-flex rounded-full px-3 py-1 hover:bg-white dark:hover:bg-zinc-900"
+            className="glass-pill pill-hover-glow inline-flex items-center gap-1.5 rounded-full px-3 py-1 hover:bg-white dark:hover:bg-zinc-900"
           >
+            <Image
+              src="/uet.svg"
+              alt=""
+              width={14}
+              height={14}
+              aria-hidden
+              className="dark:brightness-0 dark:invert"
+            />
             UET - VNU
           </a>
-          <span className="glass-pill pill-hover-glow inline-flex rounded-full px-3 py-1">
+          <span className="glass-pill pill-hover-glow inline-flex items-center gap-1.5 rounded-full px-3 py-1">
+            <Image
+              src="/hanoi.svg"
+              alt=""
+              width={14}
+              height={14}
+              aria-hidden
+              className="dark:brightness-0 dark:invert"
+            />
             Hanoi, Vietnam
           </span>
-          <span className="glass-pill pill-hover-glow inline-flex rounded-full px-3 py-1">
+          <span className="glass-pill pill-hover-glow inline-flex items-center gap-1.5 rounded-full px-3 py-1">
+            <Image
+              src="/language.svg"
+              alt=""
+              width={14}
+              height={14}
+              aria-hidden
+              className="dark:brightness-0 dark:invert"
+            />
             VN/EN
           </span>
         </div>
