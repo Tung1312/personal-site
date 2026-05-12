@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { Monitor, MoonStar, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -46,7 +47,20 @@ export function ThemeToggle() {
       aria-label={`Switch theme (current: ${currentTheme})`}
       title={`Theme: ${currentTheme}`}
     >
-      {icon}
+      <span className="relative h-4 w-4">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={currentTheme}
+            className="absolute inset-0 flex items-center justify-center"
+            initial={{ opacity: 0, y: 5, filter: "blur(3px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -5, filter: "blur(3px)" }}
+            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {icon}
+          </motion.span>
+        </AnimatePresence>
+      </span>
     </Button>
   );
 }

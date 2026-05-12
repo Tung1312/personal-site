@@ -4,6 +4,7 @@ import "./globals.css";
 import { BackgroundFx } from "@/components/background-fx";
 import { FloatingNavbar } from "@/components/layout/floating-navbar";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { ThemeFavicon } from "@/components/theme-favicon";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteData } from "@/lib/site-data";
 
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     template: `%s · ${siteData.person.name}`,
   },
   description: siteData.person.bio,
+  icons: {
+    icon: [{ url: "/favicon-light.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
@@ -45,6 +49,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <ThemeFavicon />
           <BackgroundFx />
           <div className="relative mx-auto flex min-h-screen w-full flex-col px-4 pb-6 sm:px-6 lg:px-8 xl:w-[60vw]">
             <FloatingNavbar />

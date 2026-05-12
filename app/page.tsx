@@ -53,12 +53,13 @@ export default function Home() {
               aria-hidden
               className="dark:brightness-0 dark:invert"
             />
-            VN/EN
+            vi_VN/en_US
           </span>
         </div>
         <p>
-          I&apos;ve been tinkering with self-hosting and networking since age 15.
-          I&apos;m driven by open-source ethics, ethical tech, and minimalism.
+          I&apos;ve been tinkering with self-hosting and networking since age
+          15. I&apos;m driven by open-source ethics, ethical tech, and
+          minimalism.
         </p>
         <p className="text-sm font-light italic text-zinc-600 dark:text-zinc-400">
           Simplicity is the ultimate sophistication.
