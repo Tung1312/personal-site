@@ -41,7 +41,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          disableTransitionOnChange={false}
         >
           <BackgroundFx />
           <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 pb-6 sm:px-6 lg:px-8">
