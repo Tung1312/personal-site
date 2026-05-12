@@ -9,19 +9,19 @@ export const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.15,
+      staggerChildren: 0.08,
+      delayChildren: 0.06,
     },
   },
 };
 
 export const itemVariants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 14, filter: "blur(4px)" },
   show: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.45 },
+    transition: { duration: 0.32 },
   },
 };
 
@@ -34,7 +34,7 @@ export function MotionCard({ children, className }: MotionCardProps) {
   return (
     <motion.article
       variants={itemVariants}
-      whileHover={{ y: -6, transition: { duration: 0.22 } }}
+      whileHover={{ y: -6, transition: { duration: 0.18 } }}
       className={cn("card-hover-glow", className)}
     >
       {children}

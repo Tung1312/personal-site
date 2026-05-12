@@ -9,10 +9,15 @@ import { siteData } from "@/lib/site-data";
 export default function WorkPage() {
   return (
     <section className="space-y-6 pb-4">
-      <header className="space-y-2">
+      <motion.header
+        className="space-y-2"
+        variants={itemVariants}
+        initial="hidden"
+        animate="show"
+      >
         <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Work</p>
         <h1 className="text-3xl font-semibold gradient-title">Experience building resilient product interfaces</h1>
-      </header>
+      </motion.header>
 
       <motion.div variants={containerVariants} initial="hidden" animate="show" className="space-y-4">
         {siteData.work.map((entry) => (

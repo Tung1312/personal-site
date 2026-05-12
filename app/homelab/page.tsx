@@ -15,10 +15,15 @@ const statusClasses = {
 export default function HomelabPage() {
   return (
     <section className="space-y-6 pb-4">
-      <header className="space-y-2">
+      <motion.header
+        className="space-y-2"
+        variants={itemVariants}
+        initial="hidden"
+        animate="show"
+      >
         <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Homelab</p>
         <h1 className="text-3xl font-semibold gradient-title">Infrastructure playground and service telemetry</h1>
-      </header>
+      </motion.header>
 
       <motion.div
         variants={containerVariants}

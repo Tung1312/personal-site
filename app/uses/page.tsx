@@ -14,10 +14,15 @@ const sections = [
 export default function UsesPage() {
   return (
     <section className="space-y-6 pb-4">
-      <header className="space-y-2">
+      <motion.header
+        className="space-y-2"
+        variants={itemVariants}
+        initial="hidden"
+        animate="show"
+      >
         <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Uses</p>
         <h1 className="text-3xl font-semibold gradient-title">Tools I use to design, build, and ship</h1>
-      </header>
+      </motion.header>
 
       <motion.div
         variants={containerVariants}
