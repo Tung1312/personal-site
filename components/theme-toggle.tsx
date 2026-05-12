@@ -39,16 +39,14 @@ export function ThemeToggle() {
   return (
     <Button
       type="button"
-      size="sm"
       variant="ghost"
       disabled={!hydrated}
-      className="h-9 rounded-full px-3 text-xs font-medium"
+      className="h-9 w-9 rounded-full p-0"
       onClick={() => setTheme(nextTheme)}
       aria-label={`Switch theme (current: ${currentTheme})`}
       title={`Theme: ${currentTheme}`}
     >
       {icon}
-      <span className="ml-2 hidden sm:inline">{currentTheme}</span>
     </Button>
   );
 }

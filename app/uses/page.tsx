@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { MotionCard, containerVariants, itemVariants } from "@/components/portfolio/motion";
+import { MotionCard } from "@/components/portfolio/motion";
+import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
 
@@ -14,22 +14,14 @@ const sections = [
 export default function UsesPage() {
   return (
     <section className="space-y-6 pb-4">
-      <motion.header
-        className="space-y-2"
-        variants={itemVariants}
-        initial="hidden"
-        animate="show"
-      >
-        <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Uses</p>
-        <h1 className="text-3xl font-semibold gradient-title">Tools I use to design, build, and ship</h1>
-      </motion.header>
+      <header className="space-y-2">
+        <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+          Uses
+        </p>
+        <TypewriterTitle words={["software and hardware"]} cycle={false} />
+      </header>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="show"
-        className="grid gap-4 md:grid-cols-3"
-      >
+      <div className="grid gap-4 md:grid-cols-3">
         {sections.map((section) => (
           <MotionCard key={section.key}>
             <Card className="glass-card card-hover-glow h-full">
@@ -89,7 +81,7 @@ export default function UsesPage() {
             </CardContent>
           </Card>
         </MotionCard>
-      </motion.div>
+      </div>
     </section>
   );
 }

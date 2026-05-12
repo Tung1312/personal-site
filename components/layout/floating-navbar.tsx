@@ -25,14 +25,14 @@ export function FloatingNavbar() {
               className={cn(
                 "relative rounded-full px-3 py-2 text-sm font-medium transition-colors",
                 pathname === link.href
-                  ? "text-zinc-900 dark:text-zinc-900"
+                  ? "text-white dark:text-zinc-900"
                   : "text-zinc-700 hover:bg-zinc-500/10 dark:text-zinc-300 dark:hover:bg-zinc-500/15",
               )}
             >
               {pathname === link.href ? (
                 <motion.span
                   layoutId="active-tab-indicator"
-                  className="absolute inset-0 rounded-full bg-white shadow-[0_6px_18px_rgba(255,255,255,0.3)] dark:bg-white"
+                  className="absolute inset-0 rounded-full bg-zinc-950 shadow-[0_8px_18px_rgba(15,23,42,0.38)] dark:bg-white dark:shadow-[0_0_18px_rgba(255,255,255,0.32)]"
                   transition={{
                     type: "spring",
                     stiffness: 520,

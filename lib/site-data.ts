@@ -30,10 +30,10 @@ const activityHeatmap = Array.from({ length: 98 }, (_, index) => {
 
 export const siteData = {
   person: {
-    name: "Tran Tung",
+    name: "Trần Quang Tùng",
     pronouns: "he/him",
     role: "Senior Frontend Developer · Creative Technologist",
-    bio: "junior sysadmin · homelab hobbyist",
+    bio: "19 / junior sysadmin · homelab hobbyist",
     location: "Ha Noi, Vietnam",
     availability: "Open to consulting and product collaborations",
     footerStatus: "nerd",
@@ -41,7 +41,7 @@ export const siteData = {
   },
   nav: {
     primary: [
-      { title: "bio", href: "/" },
+      { title: "info", href: "/" },
       { title: "homelab", href: "/homelab" },
       { title: "uses", href: "/uses" },
       { title: "work", href: "/work" },

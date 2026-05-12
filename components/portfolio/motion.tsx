@@ -2,26 +2,26 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import type { Variants } from "framer-motion";
 
-export const containerVariants = {
+export const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.06,
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
     },
   },
 };
 
-export const itemVariants = {
-  hidden: { opacity: 0, y: 14, filter: "blur(4px)" },
+export const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 22, filter: "blur(8px)" },
   show: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.32 },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
