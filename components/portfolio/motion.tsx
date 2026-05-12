@@ -34,8 +34,8 @@ export function MotionCard({ children, className }: MotionCardProps) {
   return (
     <motion.article
       variants={itemVariants}
-      whileHover={{ y: -6, transition: { duration: 0.18 } }}
-      className={cn("card-hover-glow", className)}
+      whileHover={{ y: -4, transition: { duration: 0.18 } }}
+      className={className}
     >
       {children}
     </motion.article>

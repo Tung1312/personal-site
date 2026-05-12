@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Server } from "lucide-react";
-import { containerVariants, itemVariants } from "@/components/portfolio/motion";
+import { MotionCard, containerVariants, itemVariants } from "@/components/portfolio/motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
 
@@ -31,7 +31,7 @@ export default function HomelabPage() {
         animate="show"
         className="grid gap-4 md:grid-cols-2"
       >
-        <motion.article variants={itemVariants} whileHover={{ y: -4 }}>
+        <MotionCard>
           <Card className="glass-card card-hover-glow h-full">
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
@@ -54,9 +54,9 @@ export default function HomelabPage() {
               ))}
             </CardContent>
           </Card>
-        </motion.article>
+        </MotionCard>
 
-        <motion.article variants={itemVariants} whileHover={{ y: -4 }}>
+        <MotionCard>
           <Card className="glass-card card-hover-glow h-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -75,7 +75,7 @@ export default function HomelabPage() {
               ))}
             </CardContent>
           </Card>
-        </motion.article>
+        </MotionCard>
       </motion.div>
     </section>
   );

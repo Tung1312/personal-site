@@ -18,7 +18,7 @@ export default function Home() {
         className="grid auto-rows-[minmax(180px,auto)] gap-4 md:grid-cols-2 xl:grid-cols-4"
       >
         <MotionCard className="md:col-span-2">
-          <Card className="glass-card h-full">
+          <Card className="glass-card card-hover-glow h-full">
             <CardHeader className="space-y-3">
               <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
                 Intro
@@ -42,7 +42,7 @@ export default function Home() {
         </MotionCard>
 
         <MotionCard>
-          <Card className="glass-card h-full">
+          <Card className="glass-card card-hover-glow h-full">
             <CardHeader>
               <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
                 Tech Stack
@@ -56,7 +56,7 @@ export default function Home() {
         </MotionCard>
 
         <MotionCard>
-          <Card className="glass-card h-full">
+          <Card className="glass-card card-hover-glow h-full">
             <CardHeader>
               <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
                 GitHub
@@ -70,7 +70,7 @@ export default function Home() {
         </MotionCard>
 
         <MotionCard className="xl:col-span-2">
-          <Card className="glass-card h-full">
+          <Card className="glass-card card-hover-glow h-full">
             <CardHeader>
               <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
                 Homelab

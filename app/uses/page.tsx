@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { containerVariants, itemVariants } from "@/components/portfolio/motion";
+import { MotionCard, containerVariants, itemVariants } from "@/components/portfolio/motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
 
@@ -31,7 +31,7 @@ export default function UsesPage() {
         className="grid gap-4 md:grid-cols-3"
       >
         {sections.map((section) => (
-          <motion.article key={section.key} variants={itemVariants} whileHover={{ y: -4 }}>
+          <MotionCard key={section.key}>
             <Card className="glass-card card-hover-glow h-full">
               <CardHeader>
                 <CardTitle>{section.title}</CardTitle>
@@ -49,10 +49,10 @@ export default function UsesPage() {
                 </ul>
               </CardContent>
             </Card>
-          </motion.article>
+          </MotionCard>
         ))}
 
-        <motion.article variants={itemVariants} whileHover={{ y: -4 }} className="md:col-span-3">
+        <MotionCard className="md:col-span-3">
           <Card className="glass-card card-hover-glow h-full">
             <CardHeader>
               <CardTitle>Laptop</CardTitle>
@@ -88,7 +88,7 @@ export default function UsesPage() {
               </div>
             </CardContent>
           </Card>
-        </motion.article>
+        </MotionCard>
       </motion.div>
     </section>
   );

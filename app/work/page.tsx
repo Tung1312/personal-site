@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BriefcaseBusiness } from "lucide-react";
-import { containerVariants, itemVariants } from "@/components/portfolio/motion";
+import { MotionCard, containerVariants, itemVariants } from "@/components/portfolio/motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
 
@@ -21,7 +21,7 @@ export default function WorkPage() {
 
       <motion.div variants={containerVariants} initial="hidden" animate="show" className="space-y-4">
         {siteData.work.map((entry) => (
-          <motion.article key={entry.company} variants={itemVariants} whileHover={{ y: -4 }}>
+          <MotionCard key={entry.company}>
             <Card className="glass-card card-hover-glow">
               <CardHeader className="space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -44,7 +44,7 @@ export default function WorkPage() {
                 </ul>
               </CardContent>
             </Card>
-          </motion.article>
+          </MotionCard>
         ))}
       </motion.div>
     </section>
