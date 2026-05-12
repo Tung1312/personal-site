@@ -1,17 +1,14 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
+import { useHydrated } from "@/lib/use-hydrated";
 import { cn } from "@/lib/utils";
 
 export function BackgroundFx() {
   const { resolvedTheme } = useTheme();
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
-  const mounted = useSyncExternalStore(
-    () => () => undefined,
-    () => true,
-    () => false,
-  );
+  const hydrated = useHydrated();
 
   useEffect(() => {
     const onPointerMove = (event: PointerEvent) => {
@@ -22,7 +19,7 @@ export function BackgroundFx() {
     return () => window.removeEventListener("pointermove", onPointerMove);
   }, []);
 
-  const isDark = mounted && resolvedTheme === "dark";
+  const isDark = hydrated && resolvedTheme === "dark";
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">

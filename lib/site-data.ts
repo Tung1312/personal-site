@@ -41,7 +41,7 @@ export const siteData = {
   },
   nav: {
     primary: [
-      { title: "~", href: "/" },
+      { title: "bio", href: "/" },
       { title: "homelab", href: "/homelab" },
       { title: "uses", href: "/uses" },
       { title: "work", href: "/work" },

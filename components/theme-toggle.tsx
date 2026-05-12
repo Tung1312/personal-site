@@ -2,8 +2,8 @@
 
 import { Monitor, MoonStar, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useMemo, useSyncExternalStore } from "react";
 import { Button } from "@/components/ui/button";
+import { useHydrated } from "@/lib/use-hydrated";
 
 type ThemeOption = "light" | "dark" | "system";
 
@@ -11,18 +11,18 @@ const sequence: ThemeOption[] = ["light", "dark", "system"];
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const mounted = useSyncExternalStore(
-    () => () => undefined,
-    () => true,
-    () => false,
-  );
+  const hydrated = useHydrated();
 
-  const currentTheme = useMemo<ThemeOption>(() => {
+  const currentTheme: ThemeOption = (() => {
+    if (!hydrated) {
+      return "system";
+    }
+
     if (theme === "light" || theme === "dark" || theme === "system") {
       return theme;
     }
     return "system";
-  }, [theme]);
+  })();
 
   const currentIndex = sequence.indexOf(currentTheme);
   const nextTheme = sequence[(currentIndex + 1) % sequence.length];
@@ -41,7 +41,7 @@ export function ThemeToggle() {
       type="button"
       size="sm"
       variant="ghost"
-      disabled={!mounted}
+      disabled={!hydrated}
       className="h-9 rounded-full px-3 text-xs font-medium"
       onClick={() => setTheme(nextTheme)}
       aria-label={`Switch theme (current: ${currentTheme})`}
