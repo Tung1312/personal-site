@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { InfoShowcaseRow } from "@/components/portfolio/info-showcase-row";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 
 const aliases = ["Trần Quang Tùng", "Tùng Trần", "Tung1312"] as const;
@@ -64,6 +65,7 @@ export default function Home() {
         <p className="text-sm font-light italic text-zinc-600 dark:text-zinc-400">
           Simplicity is the ultimate sophistication.
         </p>
+        <InfoShowcaseRow />
       </div>
     </section>
   );

@@ -108,6 +108,65 @@ body {
     box-shadow: 0 16px 36px rgba(6, 182, 212, 0.18);
 }
 
+.tech-stack-float-box {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
+}
+
+.tech-stack-row {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.25rem;
+}
+
+.tech-stack-row-ltr {
+    animation: tech-row-ltr var(--tech-row-speed-ltr, 24s) linear infinite;
+}
+
+.tech-stack-row-rtl {
+    animation: tech-row-rtl var(--tech-row-speed-rtl, 24s) linear infinite;
+}
+
+.tech-stack-row:hover {
+    animation-play-state: paused;
+}
+
+@keyframes tech-row-ltr {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes tech-row-rtl {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 .gradient-title {
     background: linear-gradient(120deg, #0f172a 20%, #2563eb 50%, #9333ea 100%);
     -webkit-background-clip: text;
