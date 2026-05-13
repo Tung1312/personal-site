@@ -7,7 +7,7 @@ export function SiteFooter() {
 
   return (
     <footer className="mt-auto pb-2 pt-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-zinc-200/70 pt-4 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+      <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-3 border-t border-zinc-200/70 pt-4 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
         <ThemeToggle />
         <div className="ml-auto flex flex-wrap items-center gap-2 sm:gap-3">
           <p>

@@ -19,14 +19,15 @@ const bottomIcons = getSvgNames("bottom");
 
 export default function Home() {
   return (
-    <section className="space-y-6 pb-4">
-      <header className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-          Hi, I&apos;m
-        </p>
-        <TypewriterTitle words={aliases} />
-      </header>
-      <div className="max-w-2xl space-y-6 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+    <section className="pb-4">
+      <div className="mx-auto max-w-2xl space-y-6">
+        <header className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+            Hi, I&apos;m
+          </p>
+          <TypewriterTitle words={aliases} />
+        </header>
+        <div className="space-y-6 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>19 / junior sysadmin · homelab hobbyist</p>
         <div className="flex flex-wrap gap-2 text-sm">
           <a
@@ -77,6 +78,7 @@ export default function Home() {
           Simplicity is the ultimate sophistication.
         </p>
         <InfoShowcaseRow topIcons={topIcons} bottomIcons={bottomIcons} />
+        </div>
       </div>
     </section>
   );
