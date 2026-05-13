@@ -1,10 +1,21 @@
-"use client";
-
+import fs from "fs";
+import path from "path";
 import Image from "next/image";
 import { InfoShowcaseRow } from "@/components/portfolio/info-showcase-row";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 
 const aliases = ["Trần Quang Tùng", "Tùng Trần", "Tung1312"] as const;
+
+function getSvgNames(dir: string) {
+  const dirPath = path.join(process.cwd(), "public", "tech", dir);
+  return fs
+    .readdirSync(dirPath)
+    .filter((f) => f.endsWith(".svg"))
+    .map((f) => f.replace(/\.svg$/, ""));
+}
+
+const topIcons = getSvgNames("top");
+const bottomIcons = getSvgNames("bottom");
 
 export default function Home() {
   return (
@@ -65,7 +76,7 @@ export default function Home() {
         <p className="text-sm font-light italic text-zinc-600 dark:text-zinc-400">
           Simplicity is the ultimate sophistication.
         </p>
-        <InfoShowcaseRow />
+        <InfoShowcaseRow topIcons={topIcons} bottomIcons={bottomIcons} />
       </div>
     </section>
   );

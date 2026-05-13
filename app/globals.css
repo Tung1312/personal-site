@@ -138,11 +138,11 @@ body {
 }
 
 .tech-stack-row-ltr {
-    animation: tech-row-ltr var(--tech-row-speed-ltr, 24s) linear infinite;
+    animation: tech-row-ltr var(--tech-row-speed-ltr, 36s) linear infinite;
 }
 
 .tech-stack-row-rtl {
-    animation: tech-row-rtl var(--tech-row-speed-rtl, 24s) linear infinite;
+    animation: tech-row-rtl var(--tech-row-speed-rtl, 36s) linear infinite;
 }
 
 .tech-stack-row:hover {

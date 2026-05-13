@@ -82,38 +82,6 @@ export const siteData = {
     mergedPrs: 91,
     heatmap: activityHeatmap,
   },
-  info: {
-    techIcons: {
-      top: [
-        "arch",
-        "cachyos",
-        "cloudflare",
-        "docker",
-        "fedora",
-        "git",
-        "linux",
-        "portainer",
-        "proxmox",
-        "terminal",
-        "ubuntu",
-      ],
-      bottom: [
-        "adguard-home",
-        "bitwarden",
-        "crafty-controller",
-        "immich",
-        "jellyfin",
-        "myspeed",
-        "nextcloud",
-        "nginx",
-        "pi-hole",
-        "prowlarr",
-        "qbittorrent",
-        "radarr",
-        "sonarr",
-      ],
-    },
-  },
   work: [
     {
       company: "Hyperlane Studio",

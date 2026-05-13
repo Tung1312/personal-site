@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { siteData } from "@/lib/site-data";
 
 const GITHUB_CARD_MIN_HEIGHT = 96;
 const TECH_BOX_MIN_HEIGHT = 96;
@@ -36,17 +35,23 @@ function StackIcon({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-export function InfoShowcaseRow() {
+export function InfoShowcaseRow({
+  topIcons,
+  bottomIcons,
+}: {
+  topIcons: string[];
+  bottomIcons: string[];
+}) {
   const [topRow, setTopRow] = useState<string[]>([]);
   const [bottomRow, setBottomRow] = useState<string[]>([]);
 
   useEffect(() => {
     const id = setTimeout(() => {
-      setTopRow(shuffle(siteData.info.techIcons.top));
-      setBottomRow(shuffle(siteData.info.techIcons.bottom));
+      setTopRow(shuffle(topIcons));
+      setBottomRow(shuffle(bottomIcons));
     }, 0);
     return () => clearTimeout(id);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="grid grid-cols-2 gap-4">
