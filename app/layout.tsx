@@ -3,7 +3,7 @@ import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { BackgroundFx } from "@/components/background-fx";
 import { FloatingNavbar } from "@/components/layout/floating-navbar";
-import { SiteFooter } from "@/components/layout/site-footer";
+import { FooterWrapper } from "@/components/layout/footer-wrapper";
 import { ThemeFavicon } from "@/components/theme-favicon";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteData } from "@/lib/site-data";
@@ -55,8 +55,9 @@ export default function RootLayout({
             <FloatingNavbar />
             <div className="flex-1">
               {children}
+              <div className="h-12" />
             </div>
-            <SiteFooter />
+            <FooterWrapper />
           </div>
         </ThemeProvider>
       </body>
