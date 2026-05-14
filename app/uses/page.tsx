@@ -33,9 +33,13 @@ function Pill({
 }
 
 export default function UsesPage() {
-  const [active, setActive] = useState<string>("laptop");
+  const [active, setActive] = useState<string | null>(null);
 
-  const data = siteData.uses[active as keyof typeof siteData.uses];
+  const handlePillClick = (cat: string) => {
+    setActive(active === cat ? null : cat);
+  };
+
+  const data = active ? siteData.uses[active as keyof typeof siteData.uses] : null;
 
   return (
     <section className="pb-4">
@@ -58,18 +62,20 @@ export default function UsesPage() {
               key={cat}
               label={cat}
               active={active === cat}
-              onClick={() => setActive(cat)}
+              onClick={() => handlePillClick(cat)}
             />
           ))}
         </div>
 
         <AnimatePresence mode="wait">
+          {active && data ? (
           <motion.div
             key={active}
+            layout
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            exit={{ opacity: 0, y: -24 }}
+            transition={{ duration: 0.2, ease: "easeInOut", layout: { duration: 0.2 } }}
           >
             <Card className="glass-card card-hover-glow">
               {"description" in data ? (
@@ -164,6 +170,7 @@ export default function UsesPage() {
               )}
             </Card>
           </motion.div>
+          ) : null}
         </AnimatePresence>
       </div>
     </section>
