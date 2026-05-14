@@ -7,7 +7,7 @@ import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
 
-const categories = ["laptop", "phone", "watch", "misc"] as const;
+const { uses } = siteData.pages;
 
 function Pill({
   label,
@@ -47,17 +47,17 @@ export default function UsesPage() {
         <header className="space-y-3">
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-              Uses
+              {uses.title}
             </p>
-            <TypewriterTitle words={["software and hardware"]} cycle={false} />
+            <TypewriterTitle words={[uses.subtitle]} cycle={false} />
           </div>
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            các công cụ và phần mềm mà mình sử dụng hằng ngày
+            {uses.description}
           </p>
         </header>
 
         <div className="flex gap-6">
-          {categories.map((cat) => (
+          {uses.categories.map((cat) => (
             <Pill
               key={cat}
               label={cat}

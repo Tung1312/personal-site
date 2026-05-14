@@ -2,6 +2,9 @@
 
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { Card, CardContent } from "@/components/ui/card";
+import { siteData } from "@/lib/site-data";
+
+const { work } = siteData.pages;
 
 export default function WorkPage() {
   return (
@@ -9,14 +12,14 @@ export default function WorkPage() {
       <div className="mx-auto max-w-2xl space-y-6">
         <header className="space-y-2">
           <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-            Work
+            {work.title}
           </p>
-          <TypewriterTitle words={["personal experiences"]} cycle={false} />
+          <TypewriterTitle words={[work.subtitle]} cycle={false} />
         </header>
         <Card className="glass-card card-hover-glow">
           <CardContent className="flex items-center justify-center py-20">
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              work in progress.
+              {work.placeholder}
             </p>
           </CardContent>
         </Card>

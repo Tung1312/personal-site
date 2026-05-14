@@ -1,26 +1,10 @@
-export type NavLink = {
-  title: string;
-  href: string;
-};
-
-export type SocialLink = {
-  label: string;
-  handle: string;
-  href: string;
-};
-
-export type WorkEntry = {
-  company: string;
-  role: string;
-  period: string;
-  highlights: string[];
-};
-
-export type HomelabService = {
-  name: string;
-  status: "Operational" | "Monitoring" | "Scaling";
-  latency: string;
-};
+import type {
+  NavLink,
+  SocialLink,
+  WorkEntry,
+  HomelabService,
+  InfoPill,
+} from "@/lib/types";
 
 const activityHeatmap = Array.from({ length: 98 }, (_, index) => {
   const wave = Math.sin(index * 0.52) + Math.cos(index * 0.21);
@@ -160,6 +144,52 @@ export const siteData = {
         latency: "31ms",
       },
     ] satisfies HomelabService[],
+  },
+  pages: {
+    info: {
+      aliases: ["Trần Quang Tùng", "Tùng Trần", "Tung1312"] as const,
+      pills: [
+        {
+          text: "UET - VNU",
+          icon: "/uet.svg",
+          href: "https://uet.vnu.edu.vn/",
+          iconClassName: "dark:brightness-0 dark:invert",
+        },
+        {
+          text: "Hanoi",
+          icon: "/hanoi.svg",
+          iconClassName: "dark:brightness-0 dark:invert",
+        },
+        {
+          text: "Vietnam",
+          icon: "/vietnam.svg",
+        },
+        {
+          text: "vi_VN/en_US",
+          icon: "/language.svg",
+          iconClassName: "dark:brightness-0 dark:invert",
+        },
+      ] satisfies InfoPill[],
+      bioParagraph:
+        "I've been tinkering with self-hosting and networking since age 15. I'm driven by open-source ethics, ethical tech, and minimalism.",
+      tagline: "Simplicity is the ultimate sophistication.",
+    },
+    homelab: {
+      title: "Homelab",
+      subtitle: "self-hosting playground",
+      placeholder: "work in progress.",
+    },
+    uses: {
+      title: "Uses",
+      subtitle: "software and hardware",
+      description: "các công cụ và phần mềm mà mình sử dụng hằng ngày",
+      categories: ["laptop", "phone", "watch", "misc"] as const,
+    },
+    work: {
+      title: "Work",
+      subtitle: "personal experiences",
+      placeholder: "work in progress.",
+    },
   },
 } as const;
 
