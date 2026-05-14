@@ -55,7 +55,17 @@ export default function Home() {
               aria-hidden
               className="dark:brightness-0 dark:invert"
             />
-            Hanoi, Vietnam
+            Hanoi
+          </span>
+          <span className="glass-pill pill-hover-glow inline-flex items-center gap-1.5 rounded-full px-3 py-1">
+            <Image
+              src="/vietnam.svg"
+              alt=""
+              width={14}
+              height={14}
+              aria-hidden
+            />
+            Vietnam
           </span>
           <span className="glass-pill pill-hover-glow inline-flex items-center gap-1.5 rounded-full px-3 py-1">
             <Image
