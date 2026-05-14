@@ -105,7 +105,7 @@ export const siteData = {
   uses: {
     laptop: {
       name: "ASUS TUF Gaming A14 (2025)",
-      image: "/images/laptop.jpg",
+      image: { src: "/images/laptop.jpg", width: 1612, height: 1209 },
       description:
         "Laptop hiện tại mình sử dụng là ASUS TUF Gaming A14 (bản 2025). Mình mua nó vào ngày 11 tháng 9 (no jokes) năm 2025 với giá là ~37 triệu đồng. Hiện tại máy đang phục vụ rất tốt, thậm chí là thừa cho toàn bộ các nhu cầu học tập, làm việc và giải trí của mình.",
       specs: [

@@ -51,9 +51,11 @@ export default function RootLayout({
         >
           <ThemeFavicon />
           <BackgroundFx />
-          <div className="relative mx-auto flex min-h-screen w-full flex-col px-4 pb-6 sm:px-6 lg:px-8 xl:w-[60vw]">
+          <div className="relative mx-auto flex min-h-screen w-full flex-col px-4 sm:px-6 lg:px-8 xl:w-[60vw]">
             <FloatingNavbar />
-            {children}
+            <div className="flex-1">
+              {children}
+            </div>
             <SiteFooter />
           </div>
         </ThemeProvider>

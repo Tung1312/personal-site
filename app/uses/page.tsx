@@ -84,15 +84,19 @@ export default function UsesPage() {
                       {data.description}
                     </p>
 
-                    <Image
-                      src={data.image}
-                      alt=""
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="h-auto w-full rounded-2xl"
-                      priority
-                    />
+                    <div
+                      className="relative w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900"
+                      style={{ aspectRatio: `${data.image.width} / ${data.image.height}` }}
+                    >
+                      <Image
+                        src={data.image.src}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 672px"
+                        priority
+                      />
+                    </div>
 
                     <div>
                       <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
