@@ -152,30 +152,30 @@ export default function UsesPage() {
                     <CardTitle>{data.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-300">
+                    <div className="flex flex-wrap gap-2">
                       {data.specs.map((item) => (
-                        <li
+                        <span
                           key={item}
-                          className="rounded-lg border border-zinc-200/70 bg-white/50 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-950/30"
+                          className="rounded-full border border-zinc-300/70 bg-white/65 px-3 py-1 text-xs font-medium dark:border-zinc-700 dark:bg-zinc-900/70"
                         >
                           {item}
-                        </li>
+                        </span>
                       ))}
-                    </ul>
+                    </div>
                   </CardContent>
                 </>
               ) : (
                 <CardContent className="pt-6">
-                  <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-300">
-                    {data.items.map((item) => (
-                      <li
+                  <div className="flex flex-wrap gap-2">
+                    {(data as { items: readonly string[] }).items.map((item) => (
+                      <span
                         key={item}
-                        className="rounded-lg border border-zinc-200/70 bg-white/50 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-950/30"
+                        className="rounded-full border border-zinc-300/70 bg-white/65 px-3 py-1 text-xs font-medium dark:border-zinc-700 dark:bg-zinc-900/70"
                       >
                         {item}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </CardContent>
               )}
             </Card>
