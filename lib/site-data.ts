@@ -171,8 +171,8 @@ export const siteData = {
         },
       ] satisfies InfoPill[],
       bioParagraph:
-        "I've been tinkering with self-hosting and networking since age 15. I'm driven by open-source ethics, ethical tech, and minimalism.",
-      tagline: "Simplicity is the ultimate sophistication.",
+        "Hiện tại mình đang học ngành *Hệ thống thông tin* tại *Đại học Công nghệ - ĐHQGHN*.\n\nTừ nhỏ mình có niềm đam mê với công nghệ, kĩ thuật và đã bắt đầu tìm hiểu, thực hành self-hosting và home networking ở tuổi 15. Hiện tại mình đang tự làm *sysadmin* cho @homelab của mình tại nhà. Mình rất quan tâm về cộng đồng open source, DIY và lối sống tối giản.\n\nNgoài ra mình làm *freelance video editor*. Các sản phẩm của mình đăng trong @work.",
+      tagline: "simplicity is the ultimate sophistication.",
     },
     homelab: {
       title: "Homelab",

@@ -20,7 +20,7 @@ function shuffle<T>(items: readonly T[]): T[] {
 function StackIcon({ src, alt }: { src: string; alt: string }) {
   return (
     <span
-      className="inline-flex items-center justify-center drop-shadow-[0_6px_12px_rgba(2,6,23,0.14)]"
+      className="inline-flex items-center justify-center drop-shadow-[0_3px_6px_rgba(2,6,23,0.2)]"
       style={{ width: TECH_ICON_SLOT_SIZE, height: TECH_ICON_SLOT_SIZE }}
     >
       <Image
