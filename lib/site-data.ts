@@ -1,10 +1,4 @@
-import type {
-  NavLink,
-  SocialLink,
-  WorkEntry,
-  HomelabService,
-  InfoPill,
-} from "@/lib/types";
+import type { NavLink, SocialLink, InfoPill } from "@/lib/types";
 
 const activityHeatmap = Array.from({ length: 98 }, (_, index) => {
   const wave = Math.sin(index * 0.52) + Math.cos(index * 0.21);
@@ -66,26 +60,6 @@ export const siteData = {
     mergedPrs: 91,
     heatmap: activityHeatmap,
   },
-  work: [
-    {
-      company: "Hyperlane Studio",
-      role: "Senior Frontend Engineer",
-      period: "2023 — Present",
-      highlights: [
-        "Led the redesign of a complex admin platform into a modular, component-driven system.",
-        "Built interaction libraries and performance budgets adopted across three product teams.",
-      ],
-    },
-    {
-      company: "Nova Grid",
-      role: "Frontend Engineer",
-      period: "2021 — 2023",
-      highlights: [
-        "Implemented analytics-heavy interfaces for infrastructure monitoring at enterprise scale.",
-        "Partnered with design on motion and accessibility standards for a new design system.",
-      ],
-    },
-  ] satisfies WorkEntry[],
   uses: {
     laptop: {
       name: "ASUS TUF Gaming A14 (2025)",
@@ -107,48 +81,44 @@ export const siteData = {
       overview:
         "Máy siêu mỏng nhẹ và nhỏ gọn nên mang đi lại rất dễ dàng và tiện lợi. Build máy cực kì chắc chắn, dù cho thân dưới máy là nhựa nhưng chất liệu nhựa rất cao cấp và đầm nên không hề có hiện tượng ọp ẹp. Bàn phím gõ thích, hành trình phím sâu và touchpad phủ kính nên từ ngày mua máy thì mình sử dụng bàn phím cơ ngoài rất ít, đi học cũng hầu như không cần phải mang theo chuột. Màn hình 2.5K 165Hz siêu sắc nét và sẽ phục vụ tốt mọi nhu cầu giải trí. Tấm nền IPS là điểm cộng với mình chứ không cần phải là OLED vì khả năng chống chói và màu sắc vẫn đẹp và đủ tốt.\n\nHệ điều hành mình sử dụng hằng ngày là CachyOS với giao diện desktop Hyprland, sử dụng Caelestia dots cực kì đẹp và dễ tùy biến. Mình bắt đầu sử dụng combo này từ 01/2026 và đến hiện tại (4 tháng sau) vẫn thấy rất thích và tiếp tục tùy biến thêm được với bộ giao diện này. Setup hiện tại của mình cho thời gian sử dụng máy từ 8-10 tiếng cho 1 ngày đi học, vô cùng thoải mái và hầu như không cần mang theo sạc.\n\nMình dual boot thêm Windows 11 để phục vụ cho edit video freelance.\n\nVới mức giá thuộc phân khúc cao cấp, mình thực sự rất may mắn và biết ơn khi được sở hữu, sử dụng chiếc laptop này. Đương nhiên rằng nó sẽ dư sức để đồng hành tốt với mình trong nhiều năm tới.",
     },
-    phone: {
-      name: "Samsung Galaxy S20FE",
-      specs: [
-        "Snapdragon 865",
-        "8GB RAM",
-        '6.5" Super AMOLED 120Hz',
-        "Android 13",
-      ],
-    },
-    watch: {
-      name: "Samsung Galaxy Watch 6",
-      specs: ["Exynos W930", "2GB RAM", "44mm case", "Wear OS 4"],
-    },
-    misc: {
+    hardware: {
       items: [
-        "AirPods Pro 2",
-        "Logitech MX Master 3S",
-        "Keychron Q1 Pro",
-        "Dell U2723QE",
+        "*Laptop*: ASUS TUF Gaming A14",
+        "*Phone*: Samsung Galaxy S20FE",
+        "*Watch*: Samsung Galaxy Watch 6",
+        "*Earphone*: Ugreen HiTune Max5C",
+        "*Earbuds*: Soundcore R50i NC",
+        "*Keyboard*: AULA F75",
+        "*Mouse*: VXE R1 SE",
       ],
     },
-  },
-  homelab: {
-    uptime: "99.982%",
-    platform: ["Proxmox", "K3s", "Docker", "Tailscale", "Grafana"],
-    services: [
-      {
-        name: "Traefik Gateway",
-        status: "Operational",
-        latency: "18ms",
-      },
-      {
-        name: "Postgres Replica",
-        status: "Monitoring",
-        latency: "25ms",
-      },
-      {
-        name: "CI Runners",
-        status: "Scaling",
-        latency: "31ms",
-      },
-    ] satisfies HomelabService[],
+    software: {
+      items: [
+        "*OS*: CachyOS / Windows 11",
+        "*Browser*: Brave",
+        "*Video*: Youtube, Jellyfin",
+        "*Music*: Gapless (local musics)",
+        "*Editing*: Adobe Premiere Pro",
+      ],
+    },
+    coding: {
+      items: [
+        "*Terminal*: Foot",
+        "*Text Editor*: Zed",
+        "*Language*: C++, Java, Python, React, JS, TS, CSS",
+        "*Agents, LLMs*: Gemini, OpenCode, Github Copilot",
+      ],
+    },
+    study: {
+      items: [
+        "*Notes*: Obsidian",
+        "*Databases*: MySQL + Workbench, DataGrip",
+        "*Networking*: Cisco Packet Tracer, Wireshark",
+      ],
+    },
+    website: {
+      body: "Website này mình code bằng: *Next.js*, *React*, *TypeScript*, *Tailwind CSS*, *Framer Motion* và host trực tiếp trên @homelab của mình, sử dụng *Cloudflare Tunnels* và tên miền riêng.\n\n*Credit*: directly inspired by @site from @0xn1nja.",
+    },
   },
   pages: {
     info: {
@@ -187,8 +157,15 @@ export const siteData = {
     uses: {
       title: "Uses",
       subtitle: "software and hardware",
-      description: "các công cụ và phần mềm mà mình sử dụng hằng ngày",
-      categories: ["laptop", "phone", "watch", "misc"] as const,
+      description: "các thiết bị và phần mềm mà mình sử dụng hằng ngày",
+      categories: [
+        "hardware",
+        "software",
+        "coding",
+        "study",
+        "laptop",
+        "website",
+      ] as const,
     },
     work: {
       title: "Work",

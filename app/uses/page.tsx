@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
 import { renderInline } from "@/lib/render-inline";
 
@@ -146,36 +146,23 @@ export default function UsesPage() {
                     </div>
 
                   </CardContent>
-              ) : "specs" in data ? (
-                <>
-                  <CardHeader>
-                    <CardTitle>{data.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {data.specs.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-zinc-300/70 bg-white/65 px-3 py-1 text-xs font-medium dark:border-zinc-700 dark:bg-zinc-900/70"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </>
-              ) : (
+              ) : "body" in data ? (
                 <CardContent className="pt-6">
-                  <div className="flex flex-wrap gap-2">
-                    {(data as { items: readonly string[] }).items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-zinc-300/70 bg-white/65 px-3 py-1 text-xs font-medium dark:border-zinc-700 dark:bg-zinc-900/70"
-                      >
-                        {item}
-                      </span>
+                  <div className="space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    {(data as { body: string }).body.split("\n\n").map((paragraph, i) => (
+                      <p key={i}>{renderInline(paragraph)}</p>
                     ))}
                   </div>
+                </CardContent>
+              ) : (
+                <CardContent className="pt-6">
+                  <ul className="space-y-1.5 text-sm text-zinc-600 dark:text-zinc-300">
+                    {(data as { items: readonly string[] }).items.map((item) => (
+                      <li key={item}>
+                        {renderInline(item)}
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               )}
             </Card>
