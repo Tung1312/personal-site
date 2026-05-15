@@ -10,7 +10,7 @@ export function FloatingNavbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-4 z-40 pt-4">
+    <header className="z-40 pt-4">
       <div className="mx-auto flex w-fit flex-col items-center">
         <motion.nav
           initial={{ opacity: 0, y: -16 }}

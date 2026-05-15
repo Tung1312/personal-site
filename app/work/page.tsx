@@ -3,6 +3,7 @@
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { Card, CardContent } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
+import { renderInline } from "@/lib/render-inline";
 
 const { work } = siteData.pages;
 
@@ -19,7 +20,7 @@ export default function WorkPage() {
         <Card className="glass-card card-hover-glow">
           <CardContent className="flex items-center justify-center py-20">
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              {work.placeholder}
+              {renderInline(work.placeholder)}
             </p>
           </CardContent>
         </Card>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteData } from "@/lib/site-data";
+import { renderInline } from "@/lib/render-inline";
 
 const { uses } = siteData.pages;
 
@@ -81,7 +82,7 @@ export default function UsesPage() {
               {"description" in data ? (
                 <CardContent className="space-y-5 pt-6">
                     <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                      {data.description}
+                      {renderInline(data.description)}
                     </p>
 
                     <div
@@ -135,7 +136,12 @@ export default function UsesPage() {
                         Tổng quan
                       </h4>
                       <p className="whitespace-pre-line text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                        {data.overview}
+                        {data.overview.split("\n\n").map((paragraph, i) => (
+                          <span key={i}>
+                            {i > 0 && <><br /><br /></>}
+                            {renderInline(paragraph)}
+                          </span>
+                        ))}
                       </p>
                     </div>
 

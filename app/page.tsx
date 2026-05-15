@@ -1,10 +1,10 @@
 import fs from "fs";
 import path from "path";
 import Image from "next/image";
-import Link from "next/link";
 import { InfoShowcaseRow } from "@/components/portfolio/info-showcase-row";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { siteData } from "@/lib/site-data";
+import { renderInline } from "@/lib/render-inline";
 
 function getSvgNames(dir: string) {
   const dirPath = path.join(process.cwd(), "public", "tech", dir);
@@ -19,27 +19,6 @@ const bottomIcons = getSvgNames("bottom");
 
 const { pages, person } = siteData;
 const { info } = pages;
-
-function renderInline(text: string) {
-  const segments = text.split(/(@homelab|@work|\*[^*]+\*)/g);
-  return segments.map((seg, i) => {
-    if (seg === "@homelab")
-      return (
-        <Link key={i} href="/homelab" className="font-medium underline underline-offset-2 decoration-zinc-400 dark:decoration-zinc-600">
-          @homelab
-        </Link>
-      );
-    if (seg === "@work")
-      return (
-        <Link key={i} href="/work" className="font-medium underline underline-offset-2 decoration-zinc-400 dark:decoration-zinc-600">
-          @work
-        </Link>
-      );
-    if (seg.startsWith("*") && seg.endsWith("*"))
-      return <strong key={i}>{seg.slice(1, -1)}</strong>;
-    return seg;
-  });
-}
 
 export default function Home() {
   return (
