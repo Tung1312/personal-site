@@ -10,12 +10,9 @@ export const siteData = {
   person: {
     name: "Trần Quang Tùng",
     pronouns: "he/him",
-    role: "Senior Frontend Developer · Creative Technologist",
-    bio: "19 / junior sysadmin · homelab hobbyist",
-    location: "Ha Noi, Vietnam",
-    availability: "Open to consulting and product collaborations",
+    birthday: new Date("2006-12-13T00:00:00"),
+    bio: (age: number) => `${age} / junior sysadmin · homelab hobbyist`,
     footerStatus: "nerd",
-    email: "hello@tung.dev",
   },
   nav: {
     primary: [
@@ -131,13 +128,9 @@ export const siteData = {
           iconClassName: "dark:brightness-0 dark:invert",
         },
         {
-          text: "Hanoi",
+          text: "Hanoi, Vietnam",
           icon: "/hanoi.svg",
           iconClassName: "dark:brightness-0 dark:invert",
-        },
-        {
-          text: "Vietnam",
-          icon: "/vietnam.svg",
         },
         {
           text: "vi_VN/en_US",
@@ -146,7 +139,7 @@ export const siteData = {
         },
       ] satisfies InfoPill[],
       bioParagraph:
-        "Hiện tại mình đang học ngành *Hệ thống thông tin* tại *Đại học Công nghệ - ĐHQGHN*.\n\nTừ nhỏ mình có niềm đam mê với công nghệ, kĩ thuật và đã bắt đầu tìm hiểu, thực hành self-hosting và home networking ở tuổi 15. Hiện tại mình đang tự làm *sysadmin* cho @homelab của mình tại nhà. Mình rất quan tâm về cộng đồng open source, DIY và lối sống tối giản.\n\nNgoài ra mình làm *freelance video editor*. Các sản phẩm của mình đăng trong @work.",
+        "I'm majoring *Information Systems* at *University of Engineering and Technology - VNU*.\n\n I'm deeply interested in technology, self-hosting and home networking, open source community, DIY, and a minimalist lifestyle. I currently run my own *sysadmin* setup for @homelab at home.\n\nOn the side, I work as a *freelance video editor*. My projects are posted on @work.",
       tagline: "simplicity is the ultimate sophistication.",
     },
     homelab: {

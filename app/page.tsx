@@ -5,6 +5,7 @@ import { InfoShowcaseRow } from "@/components/portfolio/info-showcase-row";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { siteData } from "@/lib/site-data";
 import { renderInline } from "@/lib/render-inline";
+import { getAge } from "@/lib/age";
 
 function getSvgNames(dir: string) {
   const dirPath = path.join(process.cwd(), "public", "tech", dir);
@@ -31,7 +32,7 @@ export default function Home() {
           <TypewriterTitle words={info.aliases} />
         </header>
         <div className="space-y-6 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
-        <p>{person.bio}</p>
+        <p>{person.bio(getAge(person.birthday))}</p>
         <div className="flex flex-wrap gap-2 text-sm">
           {info.pills.map((pill) => {
             const content = (

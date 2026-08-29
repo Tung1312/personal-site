@@ -15,8 +15,6 @@ export function BackgroundFx() {
 
   const lightLayerX = useTransform(pointerX, (value) => value * -28);
   const lightLayerY = useTransform(pointerY, (value) => value * -16);
-  const darkLayerX = useTransform(pointerX, (value) => value * -18);
-  const darkLayerY = useTransform(pointerY, (value) => value * -12);
   const lightScrollY = useTransform(scrollYProgress, [0, 1], [0, -48]);
   const darkScrollY = useTransform(scrollYProgress, [0, 1], [0, 40]);
   const meshScrollY = useTransform(scrollYProgress, [0, 1], [0, -26]);
@@ -49,17 +47,6 @@ export function BackgroundFx() {
       />
       {isDark ? (
         <>
-          <motion.div
-            className="absolute -inset-24 will-change-transform"
-            style={{
-              x: prefersReducedMotion ? 0 : darkLayerX,
-              y: prefersReducedMotion ? 0 : darkLayerY,
-              backgroundImage:
-                "linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px)",
-              backgroundSize: "42px 42px",
-              backgroundPosition: "-1px -1px",
-            }}
-          />
           <motion.div
             className="absolute -inset-20 will-change-transform"
             style={{

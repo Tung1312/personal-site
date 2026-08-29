@@ -7,6 +7,7 @@ import { FooterWrapper } from "@/components/layout/footer-wrapper";
 import { ThemeFavicon } from "@/components/theme-favicon";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteData } from "@/lib/site-data";
+import { getAge } from "@/lib/age";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     default: `${siteData.person.name} · Portfolio`,
     template: `%s · ${siteData.person.name}`,
   },
-  description: siteData.person.bio,
+  description: siteData.person.bio(getAge(siteData.person.birthday)),
   icons: {
     icon: [{ url: "/favicon-light.svg", type: "image/svg+xml" }],
   },
