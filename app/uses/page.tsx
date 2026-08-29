@@ -5,10 +5,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { Card, CardContent } from "@/components/ui/card";
-import { siteData } from "@/lib/site-data";
 import { renderInline } from "@/lib/render-inline";
+import { usesData } from "@/lib/data/uses";
 
-const { uses } = siteData.pages;
+const { page: uses, content } = usesData;
 
 function Pill({
   label,
@@ -40,21 +40,16 @@ export default function UsesPage() {
     setActive(active === cat ? null : cat);
   };
 
-  const data = active ? siteData.uses[active as keyof typeof siteData.uses] : null;
+  const data = active ? content[active as keyof typeof content] : null;
 
   return (
     <section className="pb-4">
       <div className="mx-auto max-w-2xl space-y-6">
-        <header className="space-y-3">
-          <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-              {uses.title}
-            </p>
-            <TypewriterTitle words={[uses.subtitle]} cycle={false} />
-          </div>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            {uses.description}
+        <header className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+            {uses.title}
           </p>
+          <TypewriterTitle words={[uses.subtitle]} cycle={false} />
         </header>
 
         <div className="flex gap-6">

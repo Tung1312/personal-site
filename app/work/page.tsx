@@ -1,11 +1,8 @@
 "use client";
 
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
-import { Card, CardContent } from "@/components/ui/card";
-import { siteData } from "@/lib/site-data";
+import { workData as work } from "@/lib/data/work";
 import { renderInline } from "@/lib/render-inline";
-
-const { work } = siteData.pages;
 
 export default function WorkPage() {
   return (
@@ -17,13 +14,9 @@ export default function WorkPage() {
           </p>
           <TypewriterTitle words={[work.subtitle]} cycle={false} />
         </header>
-        <Card className="glass-card card-hover-glow">
-          <CardContent className="flex items-center justify-center py-20">
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              {renderInline(work.placeholder)}
-            </p>
-          </CardContent>
-        </Card>
+        <p className="text-center py-20 text-sm text-zinc-500 dark:text-zinc-400">
+          {renderInline(work.placeholder)}
+        </p>
       </div>
     </section>
   );

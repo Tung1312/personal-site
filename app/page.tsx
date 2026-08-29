@@ -4,6 +4,7 @@ import Image from "next/image";
 import { InfoShowcaseRow } from "@/components/portfolio/info-showcase-row";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
 import { siteData } from "@/lib/site-data";
+import { infoData as info } from "@/lib/data/info";
 import { renderInline } from "@/lib/render-inline";
 import { getAge } from "@/lib/age";
 
@@ -18,8 +19,7 @@ function getSvgNames(dir: string) {
 const topIcons = getSvgNames("top");
 const bottomIcons = getSvgNames("bottom");
 
-const { pages, person } = siteData;
-const { info } = pages;
+const { person } = siteData;
 
 export default function Home() {
   return (
