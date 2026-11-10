@@ -16,10 +16,18 @@ export type WorkEntry = {
   highlights: string[];
 };
 
-export type HomelabService = {
-  name: string;
-  status: "Operational" | "Monitoring" | "Scaling";
-  latency: string;
+export type ServerStatus = {
+  online: boolean;
+  uptimeSeconds: number | null;
+  updatedAt: string;
+};
+
+export type BtopFrame = {
+  available: boolean;
+  html: string;
+  cols: number;
+  rows: number;
+  updatedAt: string;
 };
 
 export type InfoPill = {
@@ -39,7 +47,6 @@ export type InfoPage = {
 export type HomelabPage = {
   title: string;
   subtitle: string;
-  placeholder: string;
 };
 
 export type UsesPage = {

@@ -1,8 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import { TypewriterTitle } from "@/components/portfolio/typewriter-title";
+import { ServerStatusLine } from "@/components/homelab/server-status-line";
+import { BtopCard } from "@/components/homelab/btop-card";
 import { homelabData as homelab } from "@/lib/data/homelab";
-import { renderInline } from "@/lib/render-inline";
+
+export const metadata: Metadata = {
+  title: "Homelab",
+};
 
 export default function HomelabPage() {
   return (
@@ -14,9 +18,10 @@ export default function HomelabPage() {
           </p>
           <TypewriterTitle words={[homelab.subtitle]} cycle={false} />
         </header>
-        <p className="text-center py-20 text-sm text-zinc-500 dark:text-zinc-400">
-          {renderInline(homelab.placeholder)}
-        </p>
+
+        <ServerStatusLine />
+
+        <BtopCard />
       </div>
     </section>
   );
