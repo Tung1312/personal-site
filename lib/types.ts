@@ -45,8 +45,8 @@ export type HomelabPage = {
 export type UsesPage = {
   title: string;
   subtitle: string;
-  description: string;
-  categories: readonly string[];
+  items: readonly string[];
+  body?: string;
 };
 
 export type WorkPage = {
